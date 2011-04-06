@@ -1,0 +1,18 @@
+This is the source code accompanying my master thesis "Interactive ray tracing of skinned animations" ("Interactieve ray tracing van skeletgebasseerde animaties", in dutch). The main goals of this thesis are:
+
+* Exploring various techniques that make ray tracing fast.
+* Exploring techniques specifically for ray tracing skinned animations
+* Make a thorough comparison of the techniques.
+* A working implementation of a ray tracer.
+
+- Features of my ray tracer:
+    * packet ray tracing
+    * BVH (Bounding Volume Hierarchy) acceleration data structure. The implementation allows different methods to (re)build the data structure as to adapt to the dynamically changing geometry of a skinned animation.
+        - Fast Rebuilds, rebuild the BVH every frame to adapt to the changing geometry. Based on an approx. SAH.
+          (Based on I. Wald -- On fast Construction of SAH based Bounding Volume Hierarchies)
+        - Motion decomposition & Fuzzy datastructures, uses 2 level ray tracing with a top level data structure that is rebuild every frame and sub-level data structures that are calculated in advance based on the skinned animation.
+	  (Based on J. Günther, H. Friedrich, H.-P. Seidel, and P. Slusallek -- Interactive Ray Tracing of Skinned Animations)
+	- Refitting, refit the bounding boxes in the BVH to adapt to the motion. The quality of the BVH will degrade.
+	- Combining refitting & 2 level ray tracing.
+
+To build this code, you will need Qt, Qmake, Boost, ...? Maybe I will make it build someday with plain Make and without the Qt & Boost dependencies. Maybe not ;)
