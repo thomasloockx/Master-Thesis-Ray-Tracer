@@ -20,7 +20,7 @@ in dutch). The main goals of this thesis are:
           with a top level data structure that is rebuild every frame and
           sub-level data structures that are calculated in advance based on the
           skinned animation.
-          (Based on J. Günther, H. Friedrich, H.-P. Seidel, and P. Slusallek
+          (Based on J. Gunther, H. Friedrich, H.-P. Seidel, and P. Slusallek
           -- Interactive Ray Tracing of Skinned Animations)
 	- Refitting, refit the bounding boxes in the BVH to adapt to the motion.
       The quality of the BVH will degrade.
