@@ -134,7 +134,9 @@ void rt::SAHPartitioner::binTriangles(int beginID, int endID)
 	boxMin_ = k0;
 	binWidth_ = boxLength_ / bins_.size();
 
-	float k1 = bins_.size() * (1 - EPS) / boxLength_;
+    // HACK: There was a crash here bcoz boxLength_ == 0, not sure what's
+    // happening but patched until I figured out how it works again.
+	float k1 = bins_.size() * (1 - EPS) / std::max(boxLength_, 0.0001f);
 	
 	for (int i = beginID; i < endID; ++i) {
 

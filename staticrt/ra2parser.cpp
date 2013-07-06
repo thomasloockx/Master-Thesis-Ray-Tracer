@@ -203,7 +203,7 @@ void rt::Ra2Parser::loadCamFile(const std::string& filename)
 		}	
 
 		float fovy = toDegrees(atan((filmSizeY / 2) / depth));
-		camera_ = Camera(position, direction, up, fovy, fovy, depth, 256, 256);
+		camera_ = Camera(position, direction, up, fovy, fovy, depth, 1024, 1024);
 	}
 	else 
 		std::cerr << "Unabe to open file " << filename << std::endl;

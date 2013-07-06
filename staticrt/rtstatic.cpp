@@ -1,3 +1,6 @@
+// Library includes
+#include <FreeImage.h>
+// application includes
 #include <camera.h>
 #include <image.h>
 #include <packetraytracer.h>
@@ -6,6 +9,7 @@
 #include <simpletimer.h>
 #include <stats.h>
 
+#include <cstdio>
 #include <iostream>
 
 #include <boost/timer.hpp>
@@ -17,6 +21,8 @@ using namespace rt;
  */
 int main(int argc, char **argv)
 {
+    FreeImage_Initialise();
+
 	// STATIC SCENES //
 	boost::timer ttiTimer;
 
@@ -49,5 +55,8 @@ int main(int argc, char **argv)
 	std::cout << "build time = " << buildTime << std::endl;
 	std::cout << "render time = " << renderTime << "" << std::endl;
 	std::cout << "time to image = " << timeToImg << "" << std::endl;
+
+    FreeImage_DeInitialise();
+
 	return 0;
 }

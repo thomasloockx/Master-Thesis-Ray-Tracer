@@ -3,8 +3,6 @@
 
 #include <color.h>
 
-#include <QImage>
-
 namespace rt {
 
 /*
@@ -30,7 +28,6 @@ private:
 	const int width_;
 	const int height_;
 	Color* pixels_;
-	QImage* img_;
 
 	// to prevent evil
 	Image(const Image& other);
